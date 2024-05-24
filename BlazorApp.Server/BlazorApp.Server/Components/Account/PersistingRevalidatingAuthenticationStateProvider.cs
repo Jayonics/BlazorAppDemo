@@ -7,7 +7,8 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using BlazorApp.Server.Client;
-using BlazorApp.Server.Data;
+using BlazorApp.Shared.Data;
+using BlazorApp.Shared.Entities;
 
 namespace BlazorApp.Server.Components.Account;
 

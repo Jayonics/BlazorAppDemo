@@ -4,7 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using BlazorApp.Server.Client.Pages;
 using BlazorApp.Server.Components;
 using BlazorApp.Server.Components.Account;
-using BlazorApp.Server.Data;
+using BlazorApp.Shared.Data;
+using BlazorApp.Shared.Entities;
 
 namespace BlazorApp.Server;
 
@@ -33,12 +34,12 @@ public class Program
 
         var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ??
                                throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-        builder.Services.AddDbContext<ApplicationDbContext>(options =>
+        builder.Services.AddDbContext<UserDbContext>(options =>
             options.UseSqlServer(connectionString));
         builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
         builder.Services.AddIdentityCore<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
-            .AddEntityFrameworkStores<ApplicationDbContext>()
+            .AddEntityFrameworkStores<UserDbContext>()
             .AddSignInManager()
             .AddDefaultTokenProviders();
 

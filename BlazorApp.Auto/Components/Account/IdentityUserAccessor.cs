@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
-using BlazorApp.Auto.Data;
+using BlazorApp.Shared.Data;
+using BlazorApp.Shared.Entities;
 
 namespace BlazorApp.Auto.Components.Account;
 
